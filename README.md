@@ -13,13 +13,34 @@ Web sitenizin siralamasini takip eden ve otomatik rakip analizi yapan Python ara
 
 ## Kurulum
 
-### 1. Python Kutuphanelerini Kur
+### Yontem 1: pip ile Kurulum (Onerilen)
+
+```bash
+pip install git+https://github.com/yasar-afk/google-seo-rank.git
+```
+
+Veya repo'yu indirip kurun:
+
+```bash
+git clone https://github.com/yasar-afk/google-seo-rank.git
+cd google-seo-rank
+pip install .
+```
+
+Kurulumdan sonra komut satirindan kullanabilirsiniz:
+
+```bash
+seo-rank -k "running shoes" -s "https://adidas.com"
+seo-analiz
+```
+
+### Yontem 2: Gereksinimleri Manuel Kurma
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. .env Dosyasini Olustur
+### .env Dosyasini Olustur
 
 `.env.example` dosyasini `.env` olarak kopyalayin:
 
@@ -151,11 +172,14 @@ Google Custom Search API ucretsiz planda:
 ## Dosya Yapisi
 
 ```
-googelseo-rank/
+google-seo-rank/
 ├── rank_tracker.py       # Siralama takipcisi
 ├── rakip_analiz.py       # Otomatik rakip analizi
 ├── config.py             # Yapilandirma
-├── baslat.bat            # Windows baslatma dosyasi
+├── baslat_tr.bat         # Windows baslatma (Turkce)
+├── start_eng.bat         # Windows baslatma (Ingilizce)
+├── setup.py              # pip kurulum dosyasi
+├── pyproject.toml        # Modern Python paketleme
 ├── requirements.txt      # Python kutuphaneleri
 ├── README.md             # Bu dosya
 ├── .env.example          # Ornek API ayarlari
